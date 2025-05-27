@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CallbackController;
+use App\Http\Controllers\ProductIndexController;
+use App\Http\Controllers\RedirectController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -19,4 +22,18 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
-require __DIR__.'/auth.php';
+
+Route::get('redirect', RedirectController::class)
+    ->name('redirect')
+    ->middleware('auth');
+
+Route::get('callback', CallbackController::class)
+    ->name('callback')
+    ->middleware('auth');
+
+Route::get('products', ProductIndexController::class)
+    ->name('products.index')
+    ->middleware('auth');
+
+
+require __DIR__ . '/auth.php';
