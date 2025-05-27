@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'zid' => [
+        'client_id'     => env('ZID_CLIENT_ID'),
+        'client_secret' => env('ZID_CLIENT_SECRET'),
+        'redirect_uri'  => env('ZID_REDIRECT_URI'),
+        'authorize_url' => 'https://oauth.zid.sa/oauth/authorize',
+        'token_url'     => 'https://oauth.zid.sa/oauth/token',
+        'api_base'      => 'https://oauth.zid.sa/v1',
+    ],
 ];
